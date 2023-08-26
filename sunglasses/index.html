@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .top-bg {
+            background-color: #f5f6f6;
+        }
+
+        .navbar-nav {
+            border-radius: 30px;
+        }
+
+        .light-text {
+            color: #03cafc;
+        }
+
+        .active {
+            color: #03cafc !important;
+
+        }
+
+        .active1 {
+            background-color: #03cafc;
+            border-radius: 30px;
+
+        }
+
+        .active1:hover {
+            color: #03cafc;
+            background-color: #f5f6f6;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .nav-link {
+            transition: all ease-in-out 1.2s;
+        }
+
+        .nav-link:hover {
+            color: #03cafc;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 30px;
+
+        }
+
+        .button1:hover {
+            background-color: #03cafc !important;
+            transition: all ease-in-out 1.2s !important;
+        }
+
+        .arrow {
+            color: black;
+            font-weight: bolder;
+            border: 3px solid black;
+            border-radius: 50%;
+            font-size: 3rem;
+            padding: 0 10px;
+
+        }
+
+
+        .button2 {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            transition: all ease-in-out 1.2s !important;
+
+        }
+
+        .button2:hover {
+            background-color: #03cafc;
+        }
+
+        .clients_box {
+            border: 1px solid black;
+        }
+
+        .clients_box figure {
+            margin: 0;
+            float: left;
+        }
+
+        iframe {
+            position: relative;
+            /* z-index: 2; */
+            width: 100%;
+            height: 80vh;
+        }
+
+        .main-form {
+            position: relative;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 420px;
+            position: absolute;
+            z-index: 4;
+            background: #fff;
+            margin-top: 5rem;
+        }
+
+        .contactus {
+            border-bottom: #111111 solid 1px;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 400px;
+            height: 57px;
+            background: transparent;
+            color: #4b4b4c;
+            font-size: 18px;
+            font-weight: normal;
+            border-top: inherit;
+            border-left: inherit;
+            border-right: inherit;
+        }
+
+
+        .btn1 {
+            background-color: #03cafc;
+            color: #fff;
+            border-radius: 30px;
+            margin-top: 2rem;
+            font-weight: bolder;
+            border: none;
+            width: 100%;
+            max-width: 425px;
+            transition: all ease-in-out 1.2s;
+
+        }
+
+        .btn1:hover {
+            background-color: #fff;
+            color: #03cafc;
+        }
+
+        .footer-bg {
+            background: #252525;
+            font-family: 'Roboto', sans-serif;
+            /* margin-top: 700px; */
+            display: flex;
+            align-items: flex-end;
+        }
+
+        @media (max-width: 480px) {
+            .clients_box {
+                border: 1px solid black !important;
+                margin-left: 0 !important;
+            }
+
+            .clients_box figure {
+                margin-left: 0;
+            }
+
+            .btn1 {
+                padding: 0.4rem 6rem;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width:781px) {
+            .clients_box {
+                border: 1px solid black !important;
+                margin-left: 8rem !important;
+            }
+
+            .clients_box figure {
+                margin-left: -3rem;
+            }
+
+            .form {
+                margin-left: 10rem;
+                padding: 20px 30px;
+            }
+
+            .btn1 {
+                padding: 0.6rem 6rem;
+                margin-bottom: 30px;
+            }
+
+            .footer-bg {
+                margin-top: 930px;
+            }
+        }
+
+        @media (min-width: 781px) {
+            .clients_box {
+                border: 1px solid black !important;
+                margin-left: 16rem !important;
+            }
+
+            .clients_box figure {
+                margin-left: -6.3rem;
+                padding-right: 30px;
+            }
+
+            .form {
+                margin-left: 20rem;
+                padding: 40px 50px;
+                position: absolute;
+                z-index: 4;
+                background: #fff;
+                max-width: 420px;
+                margin-top: 5rem;
+
+
+            }
+
+            .btn1 {
+                padding: 0.6rem 10rem;
+                margin-bottom: 30px;
+
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid top-bg ">
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col">
+                    <nav class="navbar navbar-expand-sm navbar-light  ">
+                        <div class="container">
+                            <a class="navbar-brand" href="#">
+                                <img src="images/logo.png" alt=""></a>
+                            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse rounded-pills" id="collapsibleNavId">
+                                <ul class="navbar-nav ms-auto mt-2 mt-lg-0  bg-white rounded-pills py-2 px-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link active fs-5 fw-bold" href="#" aria-current="page">Home <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold " href="#" aria-current="page">Our glasess <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold" href="#" aria-current="page">About <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold" href="#" aria-current="page">Contact us <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold " href="#" aria-current="page">Shop <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold  active1 px-4" href="#"
+                                            aria-current="page">Login <span class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold " href="#" aria-current="page">Sign up <span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fs-5 fw-bold " href="#" aria-current="page"><i
+                                                class="bi bi-search"></i><span
+                                                class="visually-hidden">(current)</span></a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active text-center">
+                                <p class="display-3 fw-bolder ">Welcome</p>
+                                <p class="display-2 fw-bolder  text-black">TO OUR SUNGLASSES</p>
+                                <img src="images/banner_img.png" class="d-block w-75 m-auto pt-3" alt="...">
+                                <button class="btn btn-outline-dark rounded-pill py-3 px-5 mt-5  button1 "> SHOP
+                                    NOW</button>
+                            </div>
+                            <div class="carousel-item text-center ">
+                                <p class="display-3 fw-bolder text-center">Welcome</p>
+                                <p class="display-2 fw-bolder text-center text-black">TO OUR SUNGLASSES</p>
+                                <img src="images/banner_img.png" class="d-block w-75 m-auto pt-3" alt="...">
+                                <button class="btn btn-outline-dark rounded-pill py-3 px-5  mt-5 button1"> SHOP
+                                    NOW</button>
+
+                            </div>
+                            <div class="carousel-item text-center">
+                                <p class="display-3 fw-bolder text-center">Welcome</p>
+                                <p class="display-2 fw-bolder text-center text-black">TO OUR SUNGLASSES</p>
+                                <img src="images/banner_img.png" class="d-block w-75 m-auto pt-3" alt="...">
+                                <button class="btn btn-outline-dark rounded-pill py-3 px-5  mt-5 button1"> SHOP
+                                    NOW</button>
+
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="prev">
+                            <i class="bi bi-arrow-left arrow" aria-hidden="true"></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                            data-bs-slide="next">
+                            <i aria-hidden="true" class="bi bi-arrow-right arrow"></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-12 col-md-6 py-5 text-end">
+                        <img src="images/about_img.png" alt="" class="w-75 ">
+                    </div>
+                    <div class="col-12 col-md-6 py-5">
+                        <div class="about border border-black  text-start">
+                            <p class="h1 fw-bolder p-5">About Our Shop</p>
+                            <p class="lead px-5 pb-5">
+                                There are many variations of passages of Lorem Ipsum<br> available, but the majority
+                                have suffered alteration in some <br>form, by injected humour, or randomised words which
+                                don't <br>look even slightly believable. If
+                                you are going to use a<br> passage of Lorem Ipsum, you need to be sure there isn't
+                                <br>anything
+                                embarrassing hidden in the middle
+                                of text.
+                            </p>
+
+                        </div>
+                        <button class="btn btn-outline-dark rounded-pill py-3 px-5 mt-5 m-auto button1 "> SHOP
+                            NOW</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- <div class="container"> -->
+            <div class="row">
+                <div class="col text-center">
+                    <p class="display-6 fw-bolder">
+                        Our Glasses
+                    </p>
+                    <p class="lead fw-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor
+                        incididunt ut labor e et <br>dolore magna
+                        aliqua. Ut enim ad minim veniam, qui</p>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass1.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass2.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass3.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass4.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass5.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass6.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass7.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3  ">
+                    <div class="data border border-black text-center mx-2 my-4">
+                        <img src="images/glass8.png" class="p-5 ">
+                        <p class="h3 "><span class="light-text">$</span>50</p>
+                        <p class="h4 pb-3">Sunglasses</p>
+                    </div>
+                </div>
+                <div class="col-12 text-center pb-5">
+                    <button class="btn btn-outline-dark rounded-pill py-3 px-5 mt-5 m-auto button1 "> SHOP
+                        NOW</button>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row my-5">
+                <div class="col-12 col-md-5  text-md-end">
+                    <img class="w-100" src="images/shop_img.png" alt="">
+                </div>
+                <div class="col-12 col-md-7 bg-black p-5">
+                    <p class="display-5 text-white fw-bolder  mt-3 ps-3 pb-4 border-bottom border-white">Best SunGlasses
+                        At Our shop</p>
+                    <p class="lead fw-bolder text-white fw-bolder  mt-3 ps-3 lh-1.2 pt-4">Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipiscing elit, sed do <br>eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna
+                        aliqua. Ut enim<br> ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut<br>
+                        aliquip ex ea
+                        commodo consequat. Duis
+                        aute irure dolor in<br> reprehenderit in voluptate velit esse cillum dolore</p>
+                    <button class="btn btn-outline-dark rounded-pill py-3 px-5 mt-5 m-auto button2 "> SHOP
+                        NOW</button>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <!-- <div class="container"> -->
+            <div class="row py-5">
+                <div class="col py-5 ">
+                    <p class="display-5 fw-bolder text-center">What say our clients </p>
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide m-5 w-75 m-auto">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active py-5 mb-5" data-bs-interval="10000">
+                                <div class="clients_box text-black py-5">
+                                    <figure><img class="ps-2 ps-md-0" src="images/our.png" alt=""></figure>
+                                    <p class="h3 px-5 mx-5">Sandy Mark</p>
+                                    <p class="lead fw-semibold text-start px-md-5 mx-3 mx-md-5">Sandy Mark
+                                        It is a long established fact that a reader will be distracted by the
+                                        readable content of a page<br> when looking at its
+                                        layout. The point of using Lorem Ipsum is that it has a more-or-less
+                                        normal<br>
+                                        distribution of letters,It is a long
+                                        established fact a more-or-less normal distribution of letters,</p>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item py-5 mb-5" data-bs-interval="2000">
+                                <div class="clients_box text-black py-5">
+                                    <figure><img src="images/our.png" alt=""></figure>
+                                    <p class="h3 px-5 mx-5">Sandy Mark</p>
+                                    <p class="lead fw-semibold text-start px-5 mx-5">Sandy Mark
+                                        It is a long established fact that a reader will be distracted by the
+                                        readable content of a page<br> when looking at its
+                                        layout. The point of using Lorem Ipsum is that it has a more-or-less
+                                        normal<br>
+                                        distribution of letters,It is a long
+                                        established fact a more-or-less normal distribution of letters,</p>
+                                </div>
+
+                            </div>
+                            <div class="carousel-item  py-md-5 mb-5">
+                                <div class="clients_box text-black py-5 border-black">
+                                    <figure><img src="images/our.png" alt=""></figure>
+                                    <p class="h3 px-md-5 mx-md-5">Sandy Mark</p>
+                                    <p class="lead fw-semibold text-start px-5 mx-5">Sandy Mark
+                                        It is a long established fact that a reader will be distracted by the
+                                        readable content of a page<br> when looking at its
+                                        layout. The point of using Lorem Ipsum is that it has a more-or-less
+                                        normal<br>
+                                        distribution of letters,It is a long
+                                        established fact a more-or-less normal distribution of letters,</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section>
+            <div class="row">
+                <div class="col">
+                    <div class="map">
+                        <form id="request" class="main-form">
+                            <div class="row form">
+                                <div class="col-md-12 ">
+                                    <h3 class="fw-bolder text-center">Contact Us</h3>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <input class="contactus " placeholder="Name" type="type" name="Name">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="contactus" placeholder="Email" type="type" name="Email">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class=" contactus mt-5" placeholder="Message" type="type" Message="Name">
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="send_btn btn1">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                        <iframe class="w-100 map1"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224048.21236808566!2d77.412393!3d28.667104!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf100d815bccd%3A0x7367b6a569a08f16!2sRaj%20Nagar%20Extension%2C%20Ghaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1690993230993!5m2!1sen!2sin"
+                            width="100%" height="80%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- place footer here -->
+        <div class="container-fluid footer-bg">
+            <div class="container py-5">
+                <div class="row text-center">
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="white"
+                            class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                        </svg>
+                        <p class="text-white pt-3"> Location</p>
+                    </div>
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="white"
+                            class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                        </svg>
+                        <p class="text-white pt-3"> +0123456789
+                        </p>
+
+
+                    </div>
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="white"
+                            class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                        </svg>
+                        <p class="text-white pt-3"> demo@gmail.com</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
